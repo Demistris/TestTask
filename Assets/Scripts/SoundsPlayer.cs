@@ -18,15 +18,11 @@ public class SoundsPlayer : MonoBehaviour
     {
         if(toggle.isOn)
         {
-            Debug.Log("Add " + toggle.name);
             _audioClips.Add(toggle.GetComponent<AudioClipName>()._audioClip);
-            //_audioClips.Add(audioClip);
         }
         else
         {
-            Debug.Log("Remove " + toggle.name);
             _audioClips.Remove(toggle.GetComponent<AudioClipName>()._audioClip);
-            //_audioClips.Remove(audioClip);
         }
     }
 }
