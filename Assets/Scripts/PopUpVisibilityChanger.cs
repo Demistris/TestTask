@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChangePopUpVisibility : MonoBehaviour
+public class PopUpVisibilityChanger : MonoBehaviour
 {
     [SerializeField] private Animator _popUp;
 
