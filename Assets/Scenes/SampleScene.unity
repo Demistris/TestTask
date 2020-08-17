@@ -1793,6 +1793,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _textToDisplay: {fileID: 514803482}
+  _displayTextButton: {fileID: 1230288014}
 --- !u!114 &1060123180
 MonoBehaviour:
   m_ObjectHideFlags: 0

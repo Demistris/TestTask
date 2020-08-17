@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class TextDisplayer : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _textToDisplay;
+    [SerializeField] private Button _displayTextButton;
     private float _timer;
 
     private void Update()
@@ -24,6 +26,7 @@ public class TextDisplayer : MonoBehaviour
 
     public void DisplayTexts()
     {
+        _displayTextButton.interactable = false;
         _timer = 3f;
         _textToDisplay.gameObject.SetActive(true);
         StartCoroutine(Wait(3f));
@@ -33,5 +36,6 @@ public class TextDisplayer : MonoBehaviour
     {
         yield return new WaitForSeconds(timeToWait);
         _textToDisplay.gameObject.SetActive(false);
+        _displayTextButton.interactable = true;
     }
 }
