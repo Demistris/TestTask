@@ -14,15 +14,19 @@ public class SoundsPlayer : MonoBehaviour
         _audioSource.Play();
     }
 
-    public void ChangeAmountOfSounds(Toggle toggle, AudioClip audioClip)
+    public void ChangeAmountOfSounds(Toggle toggle)
     {
         if(toggle.isOn)
         {
-            _audioClips.Add(audioClip);
+            Debug.Log("Add " + toggle.name);
+            _audioClips.Add(toggle.GetComponent<AudioClipName>()._audioClip);
+            //_audioClips.Add(audioClip);
         }
         else
         {
-            _audioClips.Remove(audioClip);
+            Debug.Log("Remove " + toggle.name);
+            _audioClips.Remove(toggle.GetComponent<AudioClipName>()._audioClip);
+            //_audioClips.Remove(audioClip);
         }
     }
 }
