@@ -10,8 +10,11 @@ public class SoundsPlayer : MonoBehaviour
 
     public void PlayRandomSound()
     {
-        _audioSource.clip = _audioClips[Random.Range(0, _audioClips.Count)];
-        _audioSource.Play();
+        if (_audioClips.Count > 0)
+        {
+            _audioSource.clip = _audioClips[Random.Range(0, _audioClips.Count)];
+            _audioSource.Play();
+        }
     }
 
     public void ChangeAmountOfSounds(Toggle toggle)

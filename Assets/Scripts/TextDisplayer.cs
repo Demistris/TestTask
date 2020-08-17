@@ -12,15 +12,15 @@ public class TextDisplayer : MonoBehaviour
 
     private void Update()
     {
-        if (_timer > 0)
+        if (_timer > 0f)
         {
             _timer -= Time.deltaTime;
             _textToDisplay.text = _timer.ToString("F");
         }
-        else
+        else if(_timer <= 0f)
         {
-            _timer = 0;
-            _textToDisplay.text = "0.0";
+            _timer = 0f;
+            _textToDisplay.text = _timer.ToString("F");
         }
     }
 
@@ -29,6 +29,7 @@ public class TextDisplayer : MonoBehaviour
         _displayTextButton.interactable = false;
         _timer = 3f;
         _textToDisplay.gameObject.SetActive(true);
+
         StartCoroutine(Wait(3f));
     }
 
