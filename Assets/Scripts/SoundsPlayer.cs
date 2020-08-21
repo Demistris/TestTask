@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class SoundsPlayer : MonoBehaviour
 {
-    [SerializeField] private AudioSource _audioSource;
+    [SerializeField] private AudioSource _audioSource = null;
     [SerializeField] private List<AudioClipRef> _audioClips = new List<AudioClipRef>();
 
     public void PlayRandomSound()

@@ -2,7 +2,7 @@
 
 public class PopUpVisibilityChanger : MonoBehaviour
 {
-    [SerializeField] private Animator _popUp;
+    [SerializeField] private Animator _popUp = null;
 
     private static readonly int isOpen = Animator.StringToHash("isOpen");
 

@@ -5,8 +5,8 @@ using TMPro;
 
 public class ShowTextButton : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI _textToDisplay;
-    [SerializeField] private Button _displayTextButton;
+    [SerializeField] private TextMeshProUGUI _textToDisplay = null;
+    [SerializeField] private Button _displayTextButton = null;
     [SerializeField] private float _textDuration = 3f;
 
     private float _timer;
