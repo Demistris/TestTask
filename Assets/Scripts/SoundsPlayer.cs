@@ -5,17 +5,16 @@ using UnityEngine.UI;
 public class SoundsPlayer : MonoBehaviour
 {
     [SerializeField] private AudioSource _audioSource;
-
-    private readonly List<AudioClip> _audioClips = new List<AudioClip>();
+    [SerializeField] private List<AudioClipRef> _audioClips = new List<AudioClipRef>();
 
     public void PlayRandomSound()
     {
-        if (_audioClips.Count < 0)
+        if (_audioClips.Count <= 0)
         {
             return;
         }
 
-        _audioSource.PlayOneShot(_audioClips[Random.Range(0, _audioClips.Count)]);
+        _audioSource.PlayOneShot(_audioClips[Random.Range(0, _audioClips.Count)].AudioClip);
     }
 
     public void ChangeAmountOfSounds(Toggle toggle)
@@ -30,11 +29,11 @@ public class SoundsPlayer : MonoBehaviour
 
         if (toggle.isOn)
         {
-            _audioClips.Add(clip.AudioClip);
+            _audioClips.Add(clip);
         }
         else
         {
-            _audioClips.Remove(clip.AudioClip);
+            _audioClips.Remove(clip);
         }
     }
 }
