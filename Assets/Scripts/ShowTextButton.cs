@@ -13,10 +13,10 @@ public class ShowTextButton : MonoBehaviour
 
     public void DisplayTexts()
     {
-        StartCoroutine(Wait());
+        StartCoroutine(DisplayTextsCoroutine());
     }
 
-    private IEnumerator Wait()
+    private IEnumerator DisplayTextsCoroutine()
     {
         _displayTextButton.interactable = false;
         _textToDisplay.gameObject.SetActive(true);
